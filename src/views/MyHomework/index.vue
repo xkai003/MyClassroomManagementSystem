@@ -32,7 +32,7 @@ export default {
   async created () {
     try {
       // 1、先 axios 请求并后端MySQL的数据
-      const res = await axios.get('http://47.79.40.65:3001')
+      const res = await axios.get('http://47.79.40.65:3008')
       // 2、把请求过来的数据传给 相应的 数组
       // this.数组名 = res.data.数据库表名
       this.windowsList = res.data.windows_server

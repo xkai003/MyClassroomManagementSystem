@@ -28,7 +28,7 @@ export default {
   async created () {
     try {
       // 1、先 axios 请求并后端MySQL的数据
-      const res = await axios.get('http://47.79.40.65:3001')
+      const res = await axios.get('http://47.79.40.65:3008')
       console.log(res.data)
       // 2、把请求过来的数据传给 list 数组
       this.list = res.data.mytextbook
