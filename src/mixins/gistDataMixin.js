@@ -1,11 +1,9 @@
 import axios from 'axios'
 
-// ⚠️ 安全警告：客户端存储token不安全
-// 在生产环境中应该使用后端服务
 // https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/76f3e80853e14638d9983c5845188a8b857b9a16/MyClassroomManagementSystem.json
-const GITHUB_PAT = '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' // 请替换为你的token
-const GIST_ID = 'dffaa48ea67e287c8b49cb918cfa9a4b'
-const GIST_FILENAME = 'MyClassroomManagementSystem.json'
+const GITHUB_PAT = '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' // api令牌
+const GIST_ID = 'dffaa48ea67e287c8b49cb918cfa9a4b'// 我的Gist ID
+const GIST_FILENAME = 'MyClassroomManagementSystem.json'// Gist 中 JSON 文件的名字
 const API_URL = `https://api.github.com/gists/${GIST_ID}`
 const headers = {
   Authorization: `token ${GITHUB_PAT}`,
