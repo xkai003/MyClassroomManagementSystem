@@ -2,9 +2,9 @@
   <div class="box1">
     <ClassroomOne></ClassroomOne>
     <!-- 如果数据库里有数据就渲染 ClassroomTwo 组件 -->
-    <ClassroomTwo :mysql="list" v-if="this.list.length !== 0"></ClassroomTwo>
+    <ClassroomTwo v-if="this.classes.length !== 0"></ClassroomTwo>
     <!-- 如果数据库里没有数据就渲染 NoData 组件 -->
-    <NoData v-else-if="this.list.length == 0"></NoData>
+    <NoData v-else-if="this.classes.length == 0"></NoData>
   </div>
 </template>
 
@@ -12,30 +12,15 @@
 import ClassroomOne from './ClassroomOne.vue'
 import ClassroomTwo from './ClassroomTwo.vue'
 import NoData from './NoData.vue'
-// axios请求
-import axios from 'axios'
+// 1. 导入创建的 mixin 共享功能配置文件
+import gistDataMixin from '../../mixins/gistDataMixin.js'
 export default {
   name: 'MyClassroomIndex',
-  data () {
-    return {
-      list: []
-    }
-  },
+  mixins: [gistDataMixin],
   components: {
     ClassroomOne,
     ClassroomTwo,
     NoData
-  },
-  async created () {
-    try {
-      // 1、先 axios 请求并后端MySQL的数据
-      const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
-      console.log(res.data.myclassroom)
-      // 2、把请求过来的数据传给 list 数组
-      this.list = res.data.myclassroom
-    } catch (error) {
-      console.error('请求失败', error)
-    }
   }
 }
 </script>
