@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="ckgd">
-      <div class="one" v-for="item in mysql" :key="item.id">
+      <div class="one" v-for="item in list" :key="item.id">
         <div class="left">
           <p>{{ item.course }}</p>
             <table>
@@ -29,8 +29,32 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  props: ['mysql']
+  data () {
+    return {
+      list: [
+        {
+          id: 1,
+          date: '0',
+          course: '0',
+          location: '0',
+          url: '0'
+        }
+      ]
+    }
+  },
+  async created () {
+    try {
+      // 1、先 axios 请求并后端MySQL的数据
+      const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/6e3f97cc81fcb5131cec5c864bcd91a6b1a7a227/MyClassroomManagementSystem.json')
+      console.log('ClassroomTwo部分请求数据：', res.data.myclassroom)
+      // 2、把请求过来的数据传给 list 数组
+      this.list = res.data.myclassroom
+    } catch (error) {
+      console.error('请求失败', error)
+    }
+  }
 }
 </script>
 
