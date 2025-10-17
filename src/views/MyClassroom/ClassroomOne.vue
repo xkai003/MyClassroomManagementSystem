@@ -206,7 +206,7 @@ export default {
     //   alert('课程添加成功！')
     // }
     // },
-
+    //
     // 删除课程
     async deleteClass (id) {
       if (!confirm('确定要删除这个课程吗？')) {
