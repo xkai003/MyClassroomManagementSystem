@@ -41,7 +41,7 @@
 
 <script>
 // axios请求
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'UserLogin',
   data () {
@@ -52,17 +52,17 @@ export default {
     }
   },
   // axios请求
-  async created () {
-    try {
-      // 1、先 axios 请求并后端MySQL的数据
-      const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
-      // 2、把请求过来的数据传给 list 数组
-      this.list = res.data.userinfo
-      console.log(this.list)
-    } catch (error) {
-      console.error('请求失败', error)
-    }
-  },
+  // async created () {
+  //   try {
+  //     // 1、先 axios 请求并后端MySQL的数据
+  //     const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
+  //     // 2、把请求过来的数据传给 list 数组
+  //     this.list = res.data.userinfo
+  //     console.log(this.list)
+  //   } catch (error) {
+  //     console.error('请求失败', error)
+  //   }
+  // },
   methods: {
   // 两种登录方式
     onLogin () {

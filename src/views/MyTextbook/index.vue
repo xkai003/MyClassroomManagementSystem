@@ -12,7 +12,7 @@ import MyTextbookOne from './MyTextbookOne.vue'
 import MyTextbookTwo from './MyTextbookTwo.vue'
 import NoData from './NoData.vue'
 // axios请求
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'MyTextbookIndex',
   components: {
@@ -24,18 +24,18 @@ export default {
     return {
       list: []
     }
-  },
-  async created () {
-    try {
-      // 1、先 axios 请求并后端MySQL的数据
-      const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
-      console.log(res.data)
-      // 2、把请求过来的数据传给 list 数组
-      this.list = res.data.mytextbook
-    } catch (error) {
-      console.error('请求失败', error)
-    }
   }
+  // async created () {
+  //   try {
+  //     // 1、先 axios 请求并后端MySQL的数据
+  //     const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
+  //     console.log(res.data)
+  //     // 2、把请求过来的数据传给 list 数组
+  //     this.list = res.data.mytextbook
+  //   } catch (error) {
+  //     console.error('请求失败', error)
+  //   }
+  // }
 }
 </script>
 

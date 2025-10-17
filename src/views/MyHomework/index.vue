@@ -14,7 +14,7 @@
 import MyHomeworkOne from './MyHomeworkOne.vue'
 import MyHomeworkTwo from './MyHomeworkTwo.vue'
 // axios请求
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'MyHomeworkIndex',
   data () {
@@ -28,21 +28,21 @@ export default {
   components: {
     MyHomeworkOne,
     MyHomeworkTwo
-  },
-  async created () {
-    try {
-      // 1、先 axios 请求并后端MySQL的数据
-      const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
-      // 2、把请求过来的数据传给 相应的 数组
-      // this.数组名 = res.data.数据库表名
-      this.windowsList = res.data.windows_server
-      this.routingList = res.data.routing_switching
-      this.pythonList = res.data.python_programming
-      console.log(this.list)
-    } catch (error) {
-      console.error('请求失败', error)
-    }
   }
+  // async created () {
+  //   try {
+  //     // 1、先 axios 请求并后端MySQL的数据
+  //     const res = await axios.get('https://gist.githubusercontent.com/xkai003/dffaa48ea67e287c8b49cb918cfa9a4b/raw/3d7241f6fa70e693a37f9e0b9b7e7b23010a3ec6/MyClassroomManagementSystem.json')
+  //     // 2、把请求过来的数据传给 相应的 数组
+  //     // this.数组名 = res.data.数据库表名
+  //     this.windowsList = res.data.windows_server
+  //     this.routingList = res.data.routing_switching
+  //     this.pythonList = res.data.python_programming
+  //     console.log(this.list)
+  //   } catch (error) {
+  //     console.error('请求失败', error)
+  //   }
+  // }
 }
 </script>
 
