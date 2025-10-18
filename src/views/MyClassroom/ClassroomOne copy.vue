@@ -19,24 +19,24 @@
         <table>
           <tr>
             <td>上课时间：</td>
-            <td><input type="date" v-model="date"></td>
+            <td><input type="date" v-model="newClass.date"></td>
           </tr>
           <tr>
             <td>所属课程：</td>
-            <td><input type="text" v-model="course"></td>
+            <td><input type="text" v-model="newClass.course"></td>
           </tr>
           <tr>
             <td>上课地点：</td>
-            <td><input type="text" v-model="location"></td>
+            <td><input type="text" v-model="newClass.location"></td>
           </tr>
           <tr>
             <td>网址：</td>
-            <td><input type="text" v-model="url"></td>
+            <td><input type="text" placeholder="https://example.com" v-model="newClass.url"></td>
           </tr>
         </table>
         <div class="button">
-          <button @click="submit()">提交</button>
-          <button @click="reset()">重置</button>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">提交</button>
+          <button @click="resetForm()">重置</button>
         </div>
       </div>
     </div>

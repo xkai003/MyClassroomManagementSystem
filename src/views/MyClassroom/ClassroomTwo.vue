@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="ckgd">
-      <div class="one" v-for="item in classes" :key="item.id">
+      <div class="one" v-for="item in mysql" :key="item.id">
         <div class="left">
           <p>{{ item.course }}</p>
             <table>
@@ -21,7 +21,7 @@
         </div>
         <div class="right">
             <a :href=item.url>进入</a>
-            <button @click="deleteClass(id)">删除</button>
+            <button @click="del(item.id)">删除</button>
         </div>
       </div>
     </div>
@@ -29,10 +29,8 @@
 </template>
 
 <script>
-// 1. 导入创建的 mixin 共享功能配置文件
-import gistDataMixin from '../../mixins/gistDataMixin.js'
 export default {
-  mixins: [gistDataMixin]
+  props: ['mysql']
 }
 </script>
 
