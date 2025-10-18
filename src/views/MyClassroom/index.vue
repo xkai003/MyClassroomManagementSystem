@@ -2,7 +2,8 @@
   <div class="box1">
     <ClassroomOne></ClassroomOne>
     <!-- 如果数据库里有数据就渲染 ClassroomTwo 组件 -->
-    <ClassroomTwo :mysql="list" v-if="this.list.length !== 0"></ClassroomTwo>
+    <!-- <ClassroomTwo :mysql="list" v-if="this.list.length !== 0"></ClassroomTwo> -->
+    <ClassroomTwo v-if="this.list.length !== 0"></ClassroomTwo>
     <!-- 如果数据库里没有数据就渲染 NoData 组件 -->
     <NoData v-else-if="this.list.length == 0"></NoData>
   </div>
