@@ -2,7 +2,7 @@
   <div class="table">
     <ul>
         <li class="id">id</li>
-        <li>用户名</li>
+        <li>姓名</li>
         <li>密码</li>
         <li class="operate">操作</li>
     </ul>
@@ -12,8 +12,8 @@
         <li>{{ item.username}}</li>
         <li>{{ item.password }}</li>
         <li class="operate">
-            <button>查看</button>
-            <button>删除</button>
+            <button @click="$emit('edit-user', item)">编辑</button>
+            <button @click="$emit('delete-user', item.id)">删除</button>
         </li>
     </ul>
   </div>

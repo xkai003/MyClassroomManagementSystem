@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="ckgd">
-      <div class="one" v-for="item in $store.state.myclass" :key="item.id">
+      <div class="one" v-for="item in filteredClasses" :key="item.id">
         <div class="left">
           <p>{{ item.course }}</p>
             <table>
@@ -30,6 +30,38 @@
 
 <script>
 export default {
+  // 接收父组件传递的查询条件
+  props: {
+    search: {
+      type: Object,
+      default: () => ({ date: '', course: '', location: '' })
+    }
+  },
+  computed: {
+    // 计算属性：根据查询条件过滤课程列表
+    filteredClasses () {
+      const allClasses = this.$store.state.myclass || []
+      const { date, course, location } = this.search
+
+      // 转换为小写进行不区分大小写的搜索
+      const lowerCourse = (course || '').toLowerCase()
+      const lowerLocation = (location || '').toLowerCase()
+
+      return allClasses.filter(item => {
+        // 1. 时间匹配 (如果 search.date 不为空，则必须完全匹配)
+        const dateMatch = !date || item.date === date
+
+        // 2. 课程名称匹配 (模糊匹配)
+        const courseMatch = !lowerCourse || (item.course && item.course.toLowerCase().includes(lowerCourse))
+
+        // 3. 地点匹配 (模糊匹配)
+        const locationMatch = !lowerLocation || (item.location && item.location.toLowerCase().includes(lowerLocation))
+
+        // 所有条件都匹配才显示
+        return dateMatch && courseMatch && locationMatch
+      })
+    }
+  },
   methods: {
     // 删除动作
     del (id) {
@@ -46,11 +78,12 @@ export default {
 
 <style scoped>
 .box{
-  margin-top: 180px;
+  margin-top: 200px;
+  margin-left: 250px;
 }
 .box .ckgd .one{
   display: block;
-  width: 93%;/* 每个课程块的长度 */
+  width: 700px;/* 每个课程块的长度 */
   height: 150px;
   border-radius: 20px;
   border: 1px solid rgb(206, 204, 204);

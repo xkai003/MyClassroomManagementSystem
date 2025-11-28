@@ -1,16 +1,16 @@
 <template>
   <div class="box">
     <div class="title">
-      <p>学生课堂</p>
+      <p>我的课堂</p>
     </div>
     <div class="one">
       <div class="input">
-        <input type="text" v-model="searchQuery" placeholder="输入课程名或地点">
-        <button @click="search()">查询</button>
+        <input type="text" name="" id="">
+        <button>查询</button>
       </div>
-      <!-- <div class="add">
+      <div class="add">
         <button @click="open()">添加</button>
-      </div> -->
+      </div>
     </div>
     <div class="popup" v-show="isshow">
       <div class="form">
@@ -51,8 +51,7 @@ export default {
       date: '',
       course: '',
       location: '',
-      url: '', // 新增：用于存储查询输入
-      searchQuery: ''
+      url: ''
     }
   },
   methods: {
@@ -91,11 +90,6 @@ export default {
       this.course = ''
       this.location = ''
       this.url = ''
-    },
-    // 新增：发送查询事件
-    search () {
-      // 通过事件向父组件发送当前的查询内容
-      this.$emit('search-course', this.searchQuery)
     }
   }
 }

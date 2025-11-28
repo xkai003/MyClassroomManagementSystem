@@ -1,18 +1,22 @@
 <template>
   <div class="box">
       <div class="title">
-          <p>用户信息</p>
+          <p>学生信息</p>
       </div>
       <div class="seek">
-          <div>用户名：<input type="text"></div>
-          <button>查询</button>
+          <div>姓名：<input type="text" v-model="usernameQuery"></div>
+          <button @click="$emit('search', usernameQuery)">查询</button>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data () { // 添加数据模型
+    return {
+      usernameQuery: '' // 绑定查询输入框
+    }
+  }
 }
 </script>
 

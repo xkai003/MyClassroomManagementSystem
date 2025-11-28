@@ -27,11 +27,11 @@ export default {
       list: [
         { id: 1, name: '首页', router: '/HomePage' },
         { id: 2, name: '课堂教学', router: '/ClassroomTeaching' },
-        { id: 3, name: '我的课堂', router: '/MyClassroom' },
-        { id: 4, name: '我的教材', router: '/MyTextbook' },
-        { id: 5, name: '我的作业', router: '/MyHomework' },
-        { id: 6, name: '我的考试', router: '/MyExam' },
-        { id: 7, name: '用户信息', router: '/UserInfo', UserInfo: true }
+        { id: 3, name: '学生课堂', router: '/MyClassroom' },
+        // { id: 4, name: '我的教材', router: '/MyTextbook' },
+        { id: 5, name: '学生作业完成情况', router: '/MyHomework' },
+        { id: 6, name: '学生成绩', router: '/MyExam' },
+        { id: 7, name: '学生信息', router: '/UserInfo', UserInfo: true }
       ],
       //
       menus: [

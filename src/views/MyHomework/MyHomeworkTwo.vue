@@ -12,6 +12,7 @@
             <span>{{ item.limit }}</span>
             <span>作答时间：{{ item.AnswerTime }}</span>
             <span>作业要求：{{ item.Requirements }}</span>
+            <span style="color: red;">已完成人数（1）</span>
           </div>
           <div class="right">
             <a href="">进入</a>
@@ -29,6 +30,7 @@
             <span>{{ item.limit }}</span>
             <span>作答时间：{{ item.AnswerTime }}</span>
             <span>作业要求：{{ item.Requirements }}</span>
+            <span style="color: red;">已完成人数（1）</span>
           </div>
           <div class="right">
             <a href="">进入</a>
@@ -46,6 +48,7 @@
             <span>{{ item.limit }}</span>
             <span>作答时间：{{ item.AnswerTime }}</span>
             <span>作业要求：{{ item.Requirements }}</span>
+            <span style="color: red;">已完成人数（1）</span>
           </div>
           <div class="right">
             <a href="">进入</a>

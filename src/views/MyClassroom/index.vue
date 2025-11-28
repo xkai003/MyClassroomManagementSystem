@@ -1,10 +1,9 @@
 <template>
   <div class="box1">
-    <ClassroomOne></ClassroomOne>
-    <!-- 如果数据库里有数据就渲染 ClassroomTwo 组件 -->
-    <ClassroomTwo :mysql="list" v-if="this.list.length !== 0"></ClassroomTwo>
-    <!-- 如果数据库里没有数据就渲染 NoData 组件 -->
-    <NoData v-else-if="this.list.length == 0"></NoData>
+    <ClassroomOne @search-course="handleSearch"></ClassroomOne>
+    <ClassroomTwo :mysql="filteredList" v-if="filteredList.length !== 0"></ClassroomTwo>
+
+    <NoData v-else></NoData>
   </div>
 </template>
 
@@ -18,7 +17,30 @@ export default {
   name: 'MyClassroomIndex',
   data () {
     return {
-      list: []
+      list: [], // 原始数据
+      // 新增：存储当前的查询条件
+      currentSearch: ''
+    }
+  },
+  computed: {
+    // 新增：根据查询条件过滤列表
+    filteredList () {
+      if (!this.currentSearch) {
+        return this.list
+      }
+      const query = this.currentSearch.toLowerCase()
+      // 过滤逻辑：搜索课程名或地点
+      return this.list.filter(item => {
+        const courseMatch = item.course && item.course.toLowerCase().includes(query)
+        const locationMatch = item.location && item.location.toLowerCase().includes(query)
+        return courseMatch || locationMatch
+      })
+    }
+  },
+  methods: {
+    // 新增：处理 ClassroomOne 发送的查询值
+    handleSearch (searchQuery) {
+      this.currentSearch = searchQuery
     }
   },
   components: {

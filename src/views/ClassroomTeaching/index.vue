@@ -1,8 +1,8 @@
 <template>
   <div class="box1">
-      <TeachingOne></TeachingOne>
+      <TeachingOne @search-class="updateSearchConditions"></TeachingOne>
       <TeachingNavigation></TeachingNavigation>
-      <AllCourses></AllCourses>
+      <AllCourses :search="searchConditions"></AllCourses>
   </div>
 </template>
 
@@ -16,17 +16,22 @@ export default {
     TeachingOne,
     TeachingNavigation,
     AllCourses
+  },
+  data () {
+    return {
+      // 存储查询条件
+      searchConditions: {
+        date: '',
+        course: '',
+        location: ''
+      }
+    }
+  },
+  methods: {
+    // 更新查询条件的方法
+    updateSearchConditions (conditions) {
+      this.searchConditions = conditions
+    }
   }
 }
 </script>
-
-<style scoped>
-.box1{
-  width: 100%;
-  height: 100%;
-  margin-left: 250px;
-  margin-top: 60px;
-  padding-bottom: 60px;
-  background-color: #f1efef;
-}
-</style>

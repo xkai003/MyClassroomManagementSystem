@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .box{
-    position: fixed;
+    position: absolute;
     top: 120px;
     left: 0;
     width: 100%;
@@ -24,7 +24,7 @@ export default {
     margin-top: 60px;
     margin-left: 250px;
     margin-bottom: 30px;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 .navigation{
     margin-left: 10px;
