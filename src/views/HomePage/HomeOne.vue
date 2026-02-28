@@ -16,10 +16,10 @@
               <p class="data">{{ MyHomeworksPOST }}</p>
               <p>学生成绩</p>
           </div>
-          <!-- <div>
+          <div>
               <p class="data">{{ MyExamPOST }}</p>
               <p>我的考试</p>
-          </div> -->
+          </div>
       </div>
     </div>
   </template>
