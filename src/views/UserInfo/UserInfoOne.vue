@@ -1,7 +1,7 @@
 <template>
   <div class="box">
       <div class="title">
-          <p>学生信息</p>
+          <p>用户信息</p>
       </div>
       <div class="seek">
           <div>姓名：<input type="text" v-model="usernameQuery"></div>

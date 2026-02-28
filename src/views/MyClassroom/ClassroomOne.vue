@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="title">
-      <p>学生课堂</p>
+      <p>我的课堂</p>
     </div>
     <div class="one">
       <div class="input">

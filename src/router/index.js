@@ -12,6 +12,7 @@ const routes = [
   { path: '/MyTextbook', component: () => import('../views/MyTextbook/index.vue') },
   { path: '/MyHomework', component: () => import('../views/MyHomework/index.vue') },
   { path: '/MyExam', component: () => import('../views/MyExam/index.vue') },
+  { path: '/MyGrade', component: () => import('../views/MyGrade/index.vue') },
   { path: '/UserInfo', component: () => import('../views/UserInfo/index.vue') },
   { path: '/ChangePassword', component: () => import('../views/PersonalCenter/ChangePassword.vue') },
   { path: '/ChangeInfo', component: () => import('../views/PersonalCenter/ChangeInfo.vue') },

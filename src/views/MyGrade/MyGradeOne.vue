@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="title">
-            <p>我的作业</p>
+            <p>我的成绩</p>
         </div>
         <div class="seek">
             <div>科目：<input type="text"></div>

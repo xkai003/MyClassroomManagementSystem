@@ -3,14 +3,19 @@
     <ul>
         <li class="id">id</li>
         <li>课程</li>
-        <li>时间</li>
-        <li>地点</li>
+        <li>学生成绩</li>
+        <li>姓名</li>
+        <li>操作</li>
     </ul>
     <ul v-for="item in mysql" :key="item.id">
       <li class="id">{{ item.id }}</li>
       <li>{{ item.course }}</li>
       <li>{{ item.time }}</li>
       <li>{{ item.location }}</li>
+      <li>
+        <button>修改</button>
+        <button>删除</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -34,7 +39,7 @@ export default {
     border-bottom: 1px solid rgb(189, 188, 188);
 }
 .table ul li{
-    width: 30%;
+    width: 23%;
     line-height: 45px;
     list-style: none;
     float: left;

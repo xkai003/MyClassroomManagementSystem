@@ -1,20 +1,20 @@
 <template>
     <div class="box">
       <div class="title">
-          <h1>欢迎来到学生信息管理系统</h1>
+          <h1>欢迎来到我的课堂管理系统</h1>
       </div>
       <div class="one">
           <div>
               <p class="data">{{ MyClassroomPOST }}</p>
-              <p>学生信息</p>
+              <p>我的课程</p>
           </div>
           <div>
               <p class="data">{{ MyTextbookPOST }}</p>
-              <p>学生作业</p>
+              <p>我的教材</p>
           </div>
           <div>
               <p class="data">{{ MyHomeworksPOST }}</p>
-              <p>学生成绩</p>
+              <p>我的作业</p>
           </div>
           <div>
               <p class="data">{{ MyExamPOST }}</p>
@@ -51,7 +51,7 @@ export default {
       width: 23%;
       height: 90px;
       border-radius: 20px;
-      margin-left: 90px;
+      margin-left: 20px;
       margin-top: 30px;
       text-align: center;
       float: left;
